@@ -1,0 +1,193 @@
+:root {
+  --obsidian: #1a1a1a;
+  --emerald: #2d5a27;
+  --stone: #f2f2f2;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--obsidian);
+  background-color: var(--white);
+}
+
+/* Distinct Header Background */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95); /* Off-white but slightly transparent */
+  backdrop-filter: blur(10px); /* Modern luxury glass effect */
+  border-bottom: 1px solid #e0e0e0; /* Subtle line to separate from Hero */
+  transition: 0.3s ease-in-out;
+}
+
+/* Remove dot and keep Emerald color */
+.logo { 
+  color: var(--emerald); 
+  letter-spacing: 5px; 
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* Syncing the Buttons */
+.btn-premium {
+  margin-top: 40px;
+  padding: 16px 45px;
+  background: var(--obsidian);
+  color: var(--white);
+  border: 1px solid var(--obsidian);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn-premium:hover {
+  background: var(--emerald);
+  border-color: var(--emerald);
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+.navbar.scrolled {
+  background: var(--white);
+  padding: 15px 80px;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-links a {
+  margin-left: 40px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 10%;
+}
+
+.hero { text-align: center; }
+.hero h1 { font-size: 4.5rem; font-weight: 300; margin: 0; }
+.hero p { letter-spacing: 4px; color: var(--emerald); text-transform: uppercase; }
+
+.btn-premium {
+  margin-top: 40px;
+  padding: 15px 40px;
+  background: var(--obsidian);
+  color: var(--white);
+  border: 1px solid var(--obsidian);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-premium:hover {
+  background: transparent;
+  color: var(--obsidian);
+}
+
+.section-stone { background: var(--stone); }
+
+/* Header/Logo color - making it Emerald */
+.logo { 
+  color: var(--emerald); 
+  letter-spacing: 4px; 
+  font-weight: 800; 
+}
+
+/* Capabilities Grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 90%;
+}
+
+.cap-card {
+  padding: 40px;
+  background: var(--stone);
+  border-bottom: 2px solid transparent;
+  transition: 0.4s;
+  text-align: left;
+}
+
+.cap-card:hover {
+  background: var(--white);
+  border-bottom: 2px solid var(--emerald);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.cap-card h4 { color: var(--emerald); margin-bottom: 10px; }
+
+/* Footer */
+.main-footer {
+  padding: 40px 80px;
+  background: var(--white);
+  border-top: 1px solid var(--stone);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+}
+
+/* Mobile Optimization for Header */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stacks Logo over Links */
+    padding: 15px 20px;
+    height: auto;
+  }
+
+  .nav-links {
+    margin-top: 15px; /* Space between logo and links */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto; /* Allows links to swipe if they are too wide */
+    padding-bottom: 5px;
+  }
+
+  .nav-links a {
+    margin: 0 10px; /* Tighter spacing for mobile */
+    font-size: 0.65rem; /* Smaller font for small screens */
+    white-space: nowrap; /* Prevents links from breaking into two lines */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem; /* Shrinks the giant text so it fits on a phone */
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr; /* Changes 3 columns to 1 column */
+    gap: 20px;
+  }
+  
+  .cap-card {
+    padding: 30px; /* Slightly smaller padding for mobile */
+  }
+}
